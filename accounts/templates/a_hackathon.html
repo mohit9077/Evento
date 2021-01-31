@@ -1,0 +1,94 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>hackathons &mdash; Evento</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{ % static 'users/css/style.css' %}">
+  <link rel="stylesheet" href="{ % static 'users/css/components.css' %}">
+</head>
+
+<body>
+  <div id="app">
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+            <div class="login-brand">
+              <img src="{ % static 'users/img/stisla-fill.svg' %}" alt="logo" width="100" class="shadow-light rounded-circle">
+            </div>
+
+            <div class="card card-primary">
+              <div class="card-header"><h4>Register</h4></div>
+
+              <div class="card-body">
+                <form method="POST">
+                  <div class="row">
+                    <div class="form-group col-12">
+                      <label for="first_name">Title</label>
+                      <!-- <input id="first_name" type="text" class="form-control" name="first_name" autofocus> -->
+                      {% render_field form.title type="text" class="form-control" name="first_name"  %}
+                    </div>
+                    <div class="form-group col-12">
+                      <label >Club</label>
+                      <!-- <input id="last_name" type="text" class="form-control" name="last_name"> -->
+                      {% render_field form.club type="text" class="form-control" name="club"  %}
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Description</label>
+                    <!-- <input id="email" type="email" class="form-control" name="email"> -->
+                    {% render_field form.desc type="text" class="form-control" name="Description"  %}
+                    <div class="invalid-feedback">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-6">
+                      <label for="password" class="d-block">Date</label>
+                      {% render_field form.date type="date" name="date"  %}
+                      <!-- <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password"> -->
+                      <div id="pwindicator" class="pwindicator">
+                        <div class="bar"></div>
+                        <div class="label"></div>
+                      </div>
+                    </div>
+                    <div class="form-group col-6">
+                      <label for="password2" class="d-block">Venue</label>
+                      <!-- <input id="password2" type="password" class="form-control" name="password-confirm"> -->
+                      {% render_field form.venue type="text" class="form-control" name="venue"  %}
+                    </div>
+                  </div>
+
+                 
+
+                  <div class="p-t-15">
+                    <form action="submit_hackathon/" method="POST">
+                    {% csrf_token %}
+                    <button  class="btn btn--radius-2 btn--blue" type="submit">Add</button>
+                  </form>
+                </div>
+                </form>
+              </div>
+            </div>
+            <div class="simple-footer">
+              Evento &copy; 2020
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

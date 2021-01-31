@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+  
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>College Fest</li>
+        </ol>
+        <h2>Fests</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+
+  {% for fest in fests %}
+    <section id="blog" class="blog">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src="{% static 'event/assets/img/blog-1.jpg' %}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="{% url 'blog'  %}">{{ fest.title }}</a>
+
+
+              </h2>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="{% url 'blog'  %}">{{ fest.college_name }}</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="{% url 'blog'  %}"><time datetime="2020-01-01">{{ fest.date }}</time></a></li>
+                  <pre> </pre>
+                </ul>
+
+                <ul>
+                  
+                  <li class="d-flex align-items-center"><i class="bx bxs-location-plus"></i> <a href="{% url 'blog'  %}">{{ fest.venue }}</a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                 {{ fest.desc }}
+                </p>
+                <div class="read-more">
+                  {% if flag %}
+                  <a href="{% url 'eventreg' fest.id %}">Register</a>
+                  {% else %}
+                  <a href="{% url 'user' %}">Register</a>
+                  {% endif %}
+                </div>
+              </div>
+              </article>
+        </div>
+        </div>
+        {% endfor %}
+        </div>
+        
+        </section>
+
+
+
+             
+
+{% endblock content %}

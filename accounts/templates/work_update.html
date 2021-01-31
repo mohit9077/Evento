@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content-section">
+    <form method="POST">
+        <fieldset class="form-group">
+            
+            {{ form }}    			
+        </fieldset>
+        <div class="form-group">
+            
+                {% csrf_token %}
+            <button class="btn btn-outline-info" type="submit">ADD</button>
+        
+         </div>
+        </form>
+</div>
+
+{% endblock content %}
