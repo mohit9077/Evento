@@ -82,7 +82,9 @@ DATABASES = {
 "default": {
     "ENGINE": "djongo",
     "CLIENT": {
-        "host": "mongodb+srv://datauser:datauser@cluster0.um41d.mongodb.net/dataname?retryWrites=true&w=majority",
+        "host": "mongodb+srv://datauser:datauser@cluster0.um41d.mongodb.net/djongo_test?retryWrites=true&w=majority",
+    #mongodb+srv://datauser:<password>@cluster0.s19bi.mongodb.net/<dbname>?retryWrites=true&w=majority
+    
         "username": "datauser",
         "password": "datauser",
         "name": "dataname",

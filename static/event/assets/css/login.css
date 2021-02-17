@@ -6,13 +6,17 @@
 	display: flex;
 }
 .company__info{
-	background-color: #008080;
+	background-color:  rgba(6, 98, 178, 0.9);
+    --secondary: #6c75;
 	border-top-left-radius: 20px;
 	border-bottom-left-radius: 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	color: #fff;
+}
+.h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
 }
 .fa-android{
 	font-size:3em;

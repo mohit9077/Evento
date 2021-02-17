@@ -21,8 +21,8 @@ class UserReg(models.Model):
     l_name=models.CharField(max_length=20)
     username = models.CharField(max_length=15)
     email=models.EmailField()
-    password1 = encrypt(models.CharField(max_length=10,blank=False))
-    password2 = encrypt(models.CharField(max_length=10,blank=False))
+    password1 = models.CharField(max_length=10)
+    password2 = models.CharField(max_length=10)
 
     
     def get_fullname(self):
@@ -40,8 +40,8 @@ class AdminReg(models.Model):
     club = models.CharField(max_length=20)
     email     = models.EmailField()
     phone     = models.CharField(max_length=20)
-    password1 = encrypt(models.CharField(max_length=10))
-    password2 = encrypt(models.CharField(max_length=10))
+    password1 = models.CharField(max_length=10)
+    password2 = models.CharField(max_length=10)
 
 
     def __str__(self):
