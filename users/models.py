@@ -62,7 +62,7 @@ class eventregmodel(models.Model):
     branch = models.CharField(default ="NULL",max_length=100)
     club = models.CharField(default ="NULL",max_length=100)
     event_title = models.CharField(default ="NULL",max_length=100)
-
+    desc = models.TextField(default="NULL",max_length=1000)
 
 
 

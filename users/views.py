@@ -109,7 +109,6 @@ def pass_check_admin(request):
                     yo = False
             
                 if yo:
-                    print("sab chutiye")
                     messages.info(request, "Username already exist , try another name")
                     form = AdminRegForm()
                     return render(request,"register_admin.html",{'form':form})
@@ -154,7 +153,6 @@ def pass_check_user(request):
                     fo=  False
                 print(yo)
                 if yo:
-                    print("sab chutiye")
                     messages.info(request, "Username already exist , try another name")
                     form = UserRegForm()
                     return render(request,"register_user.html",{'form':form})
@@ -184,6 +182,7 @@ def pass_check_user(request):
 def eventreg(request,pk):
     hack = general.objects.get(id=pk)
     eventtitle = hack.title
+    des=hack.desc
     #print(hack.club)
     user = request.session['user']   ### mohit
     cur_user=UserReg.objects.get(username=user)    ### object (users detail)
@@ -192,13 +191,11 @@ def eventreg(request,pk):
     print(user)
     print(cur_user)
     print(cur_user.f_name)
-
-
     if request.method == 'POST':
 
         form = eventregform()
         
-        form = eventregmodel.objects.create(club = hack.club,fname = cur_user.f_name,lname = cur_user.l_name,usn = request.POST.get("company")
+        form = eventregmodel.objects.create(club = hack.club,desc=des,fname = cur_user.f_name,lname = cur_user.l_name,usn = request.POST.get("company")
         , branch = request.POST.get("subject"),email = cur_user.email,event_title=eventtitle)
         return redirect("home")
     else:

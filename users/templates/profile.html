@@ -14,8 +14,9 @@
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="p-4 pt-5">
+    
+      <nav id="sidebar" style="background-color: #05579EE6;">
+				<div class="p-4 pt-5" style="background-color: #05579EE6;">
 		  		<div class="container">
             <div class="picture-container">
               <pre>  </pre>
@@ -34,15 +35,15 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <!-- <input disabled type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""> -->
-            <button type="button" class="btn btn-primary btn-lg btn-block">{{ email }}</button>
-            <small id="emailHelp" class="form-text text-muted">Your Email</small>
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #05579EE6;">{{ email }}</button>
+            <!-- <small id="emailHelp" class="form-text text-muted">Your Email</small> -->
           </div>
           
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
             <!-- <input disabled type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""> -->
-            <button type="button" class="btn btn-primary btn-lg btn-block">{{ user }}</button>
-            <small id="emailHelp" class="form-text text-muted">Your Username.</small>
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="background-color: #05579EE6;">{{ user }}</button>
+            <!-- <small id="emailHelp" class="form-text text-muted">Your Username.</small> -->
 
           </div>
           
@@ -53,8 +54,18 @@
 
 	        
 
-	      </div>
-    	</nav>
+        </div>
+        <pre> </pre>
+        <pre></pre>
+        <pre> </pre>
+        <pre></pre>
+        <h1 class="logo mr-auto"><a href="{% url 'home' %}" class="scrollto" style="color: #fff;">EVENTO</a></h1>
+      </nav>
+ 
+			
+      
+    
+    
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
@@ -103,6 +114,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{event.event_title}}</h5>
                   <p class="card-text">{{event.club}}</p>
+                  <p class="card-text">{{event.desc}}</p>
                 </div>
               </div>
             </div>
